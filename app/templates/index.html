@@ -2,57 +2,11 @@
 {% block title %}Welcome{% endblock %}
 
 {% block body %}
-<div class="flex justify-center items-center h-screen">
-    <div id="button-container" class="text-center">
+<div class="flex flex-col justify-center items-center h-screen">
+    <div id="button-container" class="text-center mt-20">
         <a href="/people"><button id="PeopleButton" class="bg-white-500 hover:bg-gray-200 text-gray-900 font-bold text-4xl py-3 px-8 mb-4 rounded-none border border-gray-900 border-2 sm:text-3xl md:text-4xl lg:text-5xl">People</button></a>
         <a href="/projects"><button id="ProjectsButton" class="bg-white-500 hover:bg-gray-200 text-gray-900 font-bold text-4xl py-3 px-8 mb-4 rounded-none border border-gray-900 border-2 sm:text-3xl md:text-4xl lg:text-5xl">Projects</button></a>
         <a href="/topics"><button id="TopicsButton" class="bg-white-500 hover:bg-gray-200 text-gray-900 font-bold text-4xl py-3 px-8 mb-4 rounded-none border border-gray-900 border-2 sm:text-3xl md:text-4xl lg:text-5xl">Topics</button></a>
     </div>
-
-    <div id="search-container" class="text-center" style="display: none;">
-        <input type="text" id="search-box" class="border rounded px-2 py-1">
-    </div>
 </div>
-
-<style>
-    @media (max-width: 640px) and (max-height: 640px) {
-        /* Custom CSS to stack buttons when the window width is less than the window height */
-        #button-container {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* You can adjust this further for spacing and alignment */
-    }
-</style>
 {% endblock %}
-
-
-
-<!--->
-<script>
-    // Function to toggle between buttons and search box
-    function toggleButtonsAndSearch() {
-        const buttonContainer = document.getElementById('button-container');
-        const searchContainer = document.getElementById('search-container');
-
-        if (buttonContainer.style.display === 'none') {
-            buttonContainer.style.display = 'block';
-            searchContainer.style.display = 'none';
-        } else {
-            buttonContainer.style.display = 'none';
-            searchContainer.style.display = 'block';
-        }
-    }
-
-    // Add click event listeners to the buttons
-    const button1 = document.getElementById('button1');
-    const button2 = document.getElementById('button2');
-    const button3 = document.getElementById('button3');
-
-    button1.addEventListener('click', toggleButtonsAndSearch);
-    button2.addEventListener('click', toggleButtonsAndSearch);
-    button3.addEventListener('click', toggleButtonsAndSearch);
-</script>
-</-->
-
